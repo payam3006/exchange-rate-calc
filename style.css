@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  height: 100vh;
+  background-color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #5fbaa7;
+}
+img {
+  width: 150px;
+}
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 30px;
+}
+.cul {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px;
+}
+.cul1 {
+  width: 100px;
+}
