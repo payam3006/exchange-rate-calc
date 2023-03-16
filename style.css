@@ -8,6 +8,47 @@ body {
   background-color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
 }
+select {
+  /* all: unset; */
+  /* color: #555; */
+  /* border: 1px solid gray; */
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+input {
+  text-align: right;
+  background-color: whitesmoke;
+  border: none;
+  font-size: large;
+  width: 160px;
+}
+
+.rate {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: #5fbaa7;
+  font-size: medium;
+  padding-right: 17px;
+}
+.btn {
+  background-color: #5fbaa7;
+  border: 1px solid green;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #6dd6bf;
+}
+.btn:active {
+  background-color: #3b7669;
+}
 h1 {
   color: #5fbaa7;
 }

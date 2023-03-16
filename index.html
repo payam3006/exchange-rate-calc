@@ -16,14 +16,14 @@
     <p>Choose the currency and the amounts to get the exchange rate</p>
     <div class="main">
         <div class="cul cul1">
-            <select name="firstCurrency" id=""></select>
-            <button>Swap</button>
-            <select name="secondCurrency" id=""></select>
+            <select name="firstCurrency" id="firstCurrency"></select>
+            <div class="btn" onclick="swap()">Swap</div>
+            <select name="secondCurrency" id="secondCurrency"></select>
         </div>
         <div class="cul">
-            <input type="number" id="firstCurrencyValue" min="0">
-            <div class="rate"></div>
-            <input type="number" id="secondCurrencyValue" min="0">
+            <input type="number" id="firstCurrencyValue" min="0" step="0.0001" value="1">
+            <div id="rate" class="rate"></div>
+            <input type="number" id="secondCurrencyValue" min="0" step="0.0001" value="1">
 
         </div>
 
