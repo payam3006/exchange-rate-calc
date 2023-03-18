@@ -23,10 +23,12 @@ async function getData() {
   });
 
   document.getElementById("EUR2").setAttribute("selected", "selected");
-  rate.innerHTML = `1 ${currencies[0]} = ${currenciesVlues[43]} ${currencies[43]}`;
-  document
-    .getElementById("secondCurrencyValue")
-    .setAttribute("value", `${currenciesVlues[43]}`);
+  const euroInd = currencies.indexOf("EUR");
+  const usdInd = currencies.indexOf("USD");
+  exchangeRate = currenciesVlues[euroInd];
+  rate.innerHTML = `1 ${currencies[usdInd]} = ${exchangeRate} ${currencies[euroInd]}`;
+  document.getElementById("secondCurrencyValue").value =
+    currenciesVlues[euroInd].toFixed(4);
 
   console.log(currencies.indexOf("EUR"));
   console.log(list);
@@ -47,11 +49,11 @@ const updateHint = () => {
 };
 
 function updateSecondCurrencyValue() {
-  secondCurrencyValue.setAttribute(
-    "value",
-    `${(firstCurrencyValue.value * exchangeRate).toFixed(4)}`
+  secondCurrencyValue.value = (firstCurrencyValue.value * exchangeRate).toFixed(
+    4
   );
-  firstCurrencyValue.setAttribute("value", `${firstCurrencyValue.value}`);
+
+  // firstCurrencyValue.setAttribute("value", `${firstCurrencyValue.value}`);
 }
 
 function updateAll() {
@@ -69,16 +71,15 @@ firstCurrencyValue.addEventListener("change", updateAll);
 secondCurrencyValue.addEventListener("change", function () {
   updateExchangeRate();
   updateHint();
-  firstCurrencyValue.setAttribute(
-    "value",
-    `${(secondCurrencyValue.value / exchangeRate).toFixed(4)}`
+  firstCurrencyValue.value = (secondCurrencyValue.value / exchangeRate).toFixed(
+    4
   );
 });
 
 function swap() {
   let a = firstCurrencyList.value;
-  console.log(a);
+  firstCurrencyList.value = secondCurrencyList.value;
+  secondCurrencyList.value = a;
 
-  firstCurrencyList.setAttribute("value", `${secondCurrencyList.value}`);
-  secondCurrencyList.setAttribute("value", `${a}`);
+  updateAll();
 }
